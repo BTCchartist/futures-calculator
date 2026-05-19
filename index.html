@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[차티스트] 트레이딩 계산기</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root {
+    --bg:#0e0e0e; --bg2:#161616; --bg3:#1e1e1e;
+    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+    --gold:#C9A84C; --text:#f0f0f0; --text2:#999; --text3:#555;
+    --red:#e05555; --red2:#ff6b6b; --green:#4caf7d; --blue:#4a9eff;
+    --warn-bg:rgba(224,85,85,0.12); --warn-border:rgba(224,85,85,0.4);
+    --info-bg:rgba(74,158,255,0.08); --info-border:rgba(74,158,255,0.3);
+    --req-bg:rgba(201,168,76,0.07); --req-border:rgba(201,168,76,0.45);
+    --fs-base:14px; --fs-sm:11px; --fs-md:13px; --fs-lg:15px;
+    --pad-input:9px 11px; --pad-section:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:var(--fs-base);min-height:100vh;padding:24px 16px 60px;}
+  body.large{--fs-base:16px;--fs-sm:13px;--fs-md:15px;--fs-lg:17px;--pad-input:11px 13px;--pad-section:22px;}
+  .container{max-width:640px;margin:0 auto;}
+  .top-header{text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:0.5px solid var(--border2);}
+  .top-header h1{font-size:17px;font-weight:700;color:var(--gold);letter-spacing:0.3px;margin-bottom:6px;}
+  .top-header p{font-size:var(--fs-sm);color:var(--text3);}
+  .font-size-bar{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:20px;}
+  .font-size-label{font-size:12px;color:var(--text3);}
+  .fs-toggle{display:flex;gap:4px;}
+  .fs-btn{padding:5px 14px;border-radius:6px;border:0.5px solid var(--border2);background:var(--bg3);color:var(--text2);font-size:12px;font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:all 0.15s;}
+  .fs-btn.active{background:rgba(201,168,76,0.12);border-color:var(--gold);color:var(--gold);font-weight:500;}
+  .section{background:var(--bg2);border:0.5px solid var(--border);border-radius:12px;padding:var(--pad-section);margin-bottom:12px;}
+  .sec-header{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:10px;border-bottom:0.5px solid var(--border);}
+  .badge{width:22px;height:22px;border-radius:50%;background:var(--bg3);border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;}
+  .sec-title{font-size:var(--fs-md);font-weight:700;color:var(--text);}
+  .sec-sub{font-size:var(--fs-sm);color:var(--text3);margin-left:2px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+  .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+  .tp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .field{display:flex;flex-direction:column;gap:4px;}
+  .field label{font-size:var(--fs-sm);color:var(--text3);display:flex;align-items:center;gap:4px;}
+  .req-dot{width:5px;height:5px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0;}
+  .field input,.field select{background:var(--bg3);border:0.5px solid var(--border2);border-radius:8px;padding:var(--pad-input);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:var(--fs-md);width:100%;transition:border-color 0.15s,background 0.15s;-webkit-appearance:none;}
+  .field input.required,.field select.required{border-color:var(--req-border);background:var(--req-bg);}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);}
+  .field input::placeholder{color:var(--text3);font-size:var(--fs-sm);}
+  .field input[readonly]{color:var(--gold);font-weight:700;border-color:var(--req-border);background:var(--req-bg);cursor:default;}
+  .field .hint{font-size:var(--fs-sm);color:var(--blue);margin-top:2px;font-family:'JetBrains Mono',monospace;line-height:1.4;}
+  .field .sub-hint{font-size:var(--fs-sm);color:var(--text3);margin-top:2px;}
+  .toggle-row{display:flex;gap:6px;margin-bottom:12px;}
+  .toggle-btn{flex:1;padding:9px 8px;border-radius:8px;border:0.5px solid var(--border2);background:var(--bg3);color:var(--text2);font-size:var(--fs-sm);font-family:'Noto Sans KR',sans-serif;cursor:pointer;text-align:center;transition:all 0.15s;font-weight:500;}
+  .toggle-btn.active{background:rgba(201,168,76,0.12);border-color:var(--gold);color:var(--gold);}
+  .group-box{border:0.5px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;background:var(--bg3);}
+  .group-title{font-size:var(--fs-sm);font-weight:700;color:var(--gold);margin-bottom:10px;}
+  .result-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:var(--fs-md);}
+  .result-row:last-child{border-bottom:none;}
+  .result-label{color:var(--text2);display:flex;align-items:center;gap:5px;}
+  .result-val{font-family:'JetBrains Mono',monospace;font-weight:500;text-align:right;}
+  .val-gold{color:var(--gold);}
+  .val-green{color:var(--green);}
+  .val-red{color:var(--red);}
+  .val-white{color:var(--text);}
+  .warn-box{background:var(--warn-bg);border:0.5px solid var(--warn-border);border-radius:8px;padding:10px 14px;color:var(--red2);font-size:var(--fs-sm);margin:8px 0;display:none;line-height:1.5;}
+  .warn-box.show{display:block;}
+  .info-box{background:var(--info-bg);border:0.5px solid var(--info-border);border-radius:8px;padding:8px 12px;color:var(--blue);font-size:var(--fs-sm);margin-bottom:10px;line-height:1.5;}
+  .sub-section-label{font-size:var(--fs-sm);color:var(--text3);margin-bottom:8px;margin-top:4px;}
+  .method-a-content,.method-b-content{display:none;}
+  .method-a-content.show,.method-b-content.show{display:block;}
+  .tp-block{border:0.5px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;background:var(--bg3);}
+  .tp-block-title{font-size:var(--fs-sm);font-weight:700;color:var(--text2);margin-bottom:8px;}
+  .rr-row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:var(--fs-md);}
+  .rr-val{font-family:'JetBrains Mono',monospace;font-weight:500;text-align:right;color:var(--text);line-height:1.7;font-size:12px;}
+  .total-row{border-top:1px solid var(--border2);margin-top:4px;padding-top:10px;display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-md);}
+  .total-label{color:var(--green);font-weight:700;}
+  .total-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:var(--fs-lg);color:var(--green);}
+  .tooltip-wrap{position:relative;display:inline-flex;align-items:center;}
+  .tooltip-icon{width:14px;height:14px;border-radius:50%;background:var(--bg3);border:0.5px solid rgba(224,85,85,0.4);color:var(--red);font-size:9px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-family:'JetBrains Mono',monospace;transition:border-color 0.15s;}
+  .tooltip-icon:hover{border-color:var(--red);background:rgba(224,85,85,0.1);}
+  .tooltip-box{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#222;border:0.5px solid var(--border2);border-radius:8px;padding:8px 12px;font-size:11px;color:var(--text2);line-height:1.6;z-index:100;min-width:200px;max-width:280px;white-space:normal;}
+  .tooltip-wrap:hover .tooltip-box{display:block;}
+  .hidden{display:none !important;}
+  @media(max-width:520px){
+    .grid4{grid-template-columns:1fr 1fr;}
+    .grid3{grid-template-columns:1fr 1fr;}
+    .tooltip-box{left:0;transform:none;}
+  }
+</style>
+</head>
+<body id="body">
+<div class="container">
+
+  <div class="top-header">
+    <h1>[차티스트] 트레이딩 계산기</h1>
+    <p><span style="color:var(--red);font-size:10px;">●</span> 빨간 점 + 골드 음영 = 필수 입력 &nbsp;|&nbsp; 나머지 = 선택 또는 자동 계산</p>
+  </div>
+
+  <div class="font-size-bar">
+    <span class="font-size-label">글자크기</span>
+    <div class="fs-toggle">
+      <button class="fs-btn active" onclick="setFontSize('normal')">보통</button>
+      <button class="fs-btn" onclick="setFontSize('large')">크게</button>
+    </div>
+  </div>
+
+  <!-- 1 기본 설정 -->
+  <div class="section">
+    <div class="sec-header"><div class="badge">1</div><span class="sec-title">기본 설정</span></div>
+    <div class="grid3">
+      <div class="field">
+        <label><span class="req-dot"></span>종목</label>
+        <input type="text" id="symbol" class="required" placeholder="BTCUSDT" value="BTCUSDT">
+      </div>
+      <div class="field" id="direction-field">
+        <label><span class="req-dot"></span><span id="direction-label">방향</span></label>
+        <select id="direction" class="required" onchange="calc()">
+          <option value="long">LONG</option>
+          <option value="short">SHORT</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>
+          <span class="req-dot"></span><span id="lev-label">배율</span>
+          <span class="tooltip-wrap" id="lev-tooltip">
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box">레버리지 배율. 10x면 증거금의 10배 포지션을 잡음. 배율이 높을수록 청산가가 평단에 가까워지고 손익폭이 커짐.</span>
+          </span>
+        </label>
+        <input type="number" id="leverage" class="required" placeholder="10" value="10" min="1" max="125" oninput="calc()">
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 수량 단위 -->
+  <div class="section">
+    <div class="sec-header"><div class="badge">2</div><span class="sec-title">수량 단위 선택</span></div>
+    <div class="toggle-row" id="unit-toggle">
+      <button class="toggle-btn active" onclick="setUnit('usdt')">USDT (금액 기준)</button>
+      <button class="toggle-btn" onclick="setUnit('qty')">수량 (코인 개수)</button>
+      <button class="toggle-btn" onclick="setUnit('krw')">KRW (원화 기준)</button>
+    </div>
+    <div style="font-size:var(--fs-sm);color:var(--text3);" id="unit-hint">※ USDT: 투자 금액(예: 5000 USDT)으로 입력</div>
+  </div>
+
+  <!-- 3 진입 방식 -->
+  <div class="section">
+    <div class="sec-header"><div class="badge">3</div><span class="sec-title">진입 방식 선택</span><span class="sec-sub">A 또는 B 선택</span></div>
+    <div class="toggle-row" id="method-toggle">
+      <button class="toggle-btn active" onclick="setMethod('A')">방법 A — 일반 분할매수</button>
+      <button class="toggle-btn" onclick="setMethod('B')">
+        방법 B — 스케일드 오더
+        <span class="tooltip-wrap" onclick="event.stopPropagation()">
+          <span class="tooltip-icon">?</span>
+          <span class="tooltip-box">구간 상단~하단 사이를 지정한 개수로 균등 분할해서 자동으로 매수 주문을 배치하는 방식. 평균 단가는 구간 중간값으로 계산됨.</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="method-a-content show" id="method-a">
+      <div class="sub-section-label">진입가 + 수량 직접 입력 (1~3차)</div>
+      <div class="grid2">
+        <div class="field"><label><span class="req-dot"></span><span id="a1p-label">1차 진입가 (USDT)</span></label><input type="text" id="a1p" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span class="req-dot"></span><span id="a1q-label">1차 USDT</span></label><input type="text" id="a1q" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label><span id="a2p-label">2차 진입가 (USDT)</span></label><input type="text" id="a2p" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="a2q-label">2차 USDT</span></label><input type="text" id="a2q" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label><span id="a3p-label">3차 진입가 (USDT)</span></label><input type="text" id="a3p" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="a3q-label">3차 USDT</span></label><input type="text" id="a3q" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+      </div>
+    </div>
+
+    <div class="method-b-content" id="method-b">
+      <div class="sub-section-label">구간별 자동 분할 (최대 3구간)</div>
+      <div class="group-box">
+        <div class="group-title">구간 1 &nbsp;<span style="color:var(--gold);font-size:10px;">● 필수</span></div>
+        <div class="grid4">
+          <div class="field"><label><span class="req-dot"></span>구간 상단</label><input type="text" id="b1hi" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label><span class="req-dot"></span>구간 하단</label><input type="text" id="b1lo" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label><span class="req-dot"></span><span id="b1q-label">총 USDT</span></label><input type="text" id="b1q" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label>분할 개수</label><input type="number" id="b1n" placeholder="10" value="10" min="2" max="100" oninput="calc()"></div>
+        </div>
+        <div class="result-row"><span class="result-label">구간 1 평균 진입가</span><span class="result-val val-gold" id="b1avg">—</span></div>
+      </div>
+      <div class="group-box">
+        <div class="group-title">구간 2 &nbsp;<span style="color:var(--text3);font-size:10px;">선택</span></div>
+        <div class="grid4">
+          <div class="field"><label>구간 상단</label><input type="text" id="b2hi" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label>구간 하단</label><input type="text" id="b2lo" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label><span id="b2q-label">총 USDT</span></label><input type="text" id="b2q" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label>분할 개수</label><input type="number" id="b2n" placeholder="5" min="2" max="100" oninput="calc()"></div>
+        </div>
+        <div class="result-row"><span class="result-label">구간 2 평균 진입가</span><span class="result-val val-gold" id="b2avg">—</span></div>
+      </div>
+      <div class="group-box">
+        <div class="group-title">구간 3 &nbsp;<span style="color:var(--text3);font-size:10px;">선택</span></div>
+        <div class="grid4">
+          <div class="field"><label>구간 상단</label><input type="text" id="b3hi" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label>구간 하단</label><input type="text" id="b3lo" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label><span id="b3q-label">총 USDT</span></label><input type="text" id="b3q" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+          <div class="field"><label>분할 개수</label><input type="number" id="b3n" placeholder="5" min="2" max="100" oninput="calc()"></div>
+        </div>
+        <div class="result-row"><span class="result-label">구간 3 평균 진입가</span><span class="result-val val-gold" id="b3avg">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 평단 결과 -->
+  <div class="section">
+    <div class="sec-header"><div class="badge">4</div><span class="sec-title">평단 결과</span><span class="sec-sub">선택한 방식 기준</span></div>
+    <div class="result-row"><span class="result-label">전체 평단가</span><span class="result-val val-gold" id="res-avg">—</span></div>
+    <div class="result-row"><span class="result-label" id="qty-label">총 수량</span><span class="result-val val-white" id="res-qty">—</span></div>
+    <div class="result-row"><span class="result-label" id="pos-label">총 포지션 금액</span><span class="result-val val-white" id="res-pos">—</span></div>
+    <div class="result-row" id="margin-row">
+      <span class="result-label">
+        필요 증거금
+        <span class="tooltip-wrap">
+          <span class="tooltip-icon">?</span>
+          <span class="tooltip-box">해당 포지션을 열기 위해 계좌에 최소한 있어야 하는 금액. 배율 10x면 총 포지션 금액의 1/10.</span>
+        </span>
+      </span>
+      <span class="result-val val-red" id="res-margin">—</span>
+    </div>
+  </div>
+
+  <!-- 5 손익비 -->
+  <div class="section">
+    <div class="sec-header"><div class="badge">5</div><span class="sec-title">손익비 계산</span></div>
+    <div class="field" style="margin-bottom:12px;">
+      <label><span class="req-dot"></span><span id="sl-label">손절가 SL (USDT)</span></label>
+      <input type="text" id="sl" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)">
+    </div>
+    <div class="warn-box" id="warn-sl-dir"></div>
+    <div class="warn-box" id="warn-sl-lev">⚠️ 손절 시 투입 증거금의 30% 이상 손실됩니다. 손절가를 올리거나 수량을 줄이세요.</div>
+    <div class="result-row"><span class="result-label">손절 % (평단 기준)</span><span class="result-val val-red" id="res-sl-pct">—</span></div>
+    <div class="result-row" id="lev-sl-row" style="margin-bottom:12px;"><span class="result-label">배율 반영 손절</span><span class="result-val val-red" id="res-sl-lev">—</span></div>
+    <div class="info-box">익절 수량을 입력하면 해당 수량 기준으로 수익 계산 / <strong>비워두면 전체 포지션 기준</strong>으로 계산</div>
+    <div class="warn-box" id="warn-tp-over">⚠️ TP 익절 수량 합계가 총 포지션을 초과합니다.</div>
+
+    <div class="tp-block">
+      <div class="tp-block-title">TP1 &nbsp;<span style="font-size:10px;color:var(--gold);">● 필수</span></div>
+      <div class="tp-grid">
+        <div class="field"><label><span class="req-dot"></span><span id="tp1-label">TP1 가격 (USDT)</span></label><input type="text" id="tp1" class="required" placeholder="필수" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="hint" id="tp1-hint"></div></div>
+        <div class="field"><label><span id="tp1q-label">익절 USDT</span></label><input type="text" id="tp1q" placeholder="비우면 전체" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="sub-hint">비우면 전체 포지션 기준</div></div>
+      </div>
+      <div class="warn-box" id="warn-tp1-low"></div>
+      <div class="result-row" style="margin-top:6px;"><span class="result-label">TP1 수익</span><span class="result-val val-green" id="res-tp1">—</span></div>
+    </div>
+    <div class="tp-block">
+      <div class="tp-block-title">TP2 &nbsp;<span style="font-size:10px;color:var(--text3);">선택</span></div>
+      <div class="tp-grid">
+        <div class="field"><label><span id="tp2-label">TP2 가격 (USDT)</span></label><input type="text" id="tp2" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="tp2q-label">익절 USDT</span></label><input type="text" id="tp2q" placeholder="비우면 전체" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="sub-hint">비우면 전체 포지션 기준</div></div>
+      </div>
+      <div class="warn-box" id="warn-tp2-low"></div>
+      <div class="result-row" style="margin-top:6px;"><span class="result-label">TP2 수익</span><span class="result-val val-green" id="res-tp2">—</span></div>
+    </div>
+    <div class="tp-block">
+      <div class="tp-block-title">TP3 &nbsp;<span style="font-size:10px;color:var(--text3);">선택</span></div>
+      <div class="tp-grid">
+        <div class="field"><label><span id="tp3-label">TP3 가격 (USDT)</span></label><input type="text" id="tp3" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="tp3q-label">익절 USDT</span></label><input type="text" id="tp3q" placeholder="비우면 전체" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="sub-hint">비우면 전체 포지션 기준</div></div>
+      </div>
+      <div class="warn-box" id="warn-tp3-low"></div>
+      <div class="result-row" style="margin-top:6px;"><span class="result-label">TP3 수익</span><span class="result-val val-green" id="res-tp3">—</span></div>
+    </div>
+    <div class="tp-block">
+      <div class="tp-block-title">TP4 &nbsp;<span style="font-size:10px;color:var(--text3);">선택</span></div>
+      <div class="tp-grid">
+        <div class="field"><label><span id="tp4-label">TP4 가격 (USDT)</span></label><input type="text" id="tp4" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="tp4q-label">익절 USDT</span></label><input type="text" id="tp4q" placeholder="비우면 전체" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="sub-hint">비우면 전체 포지션 기준</div></div>
+      </div>
+      <div class="warn-box" id="warn-tp4-low"></div>
+      <div class="result-row" style="margin-top:6px;"><span class="result-label">TP4 수익</span><span class="result-val val-green" id="res-tp4">—</span></div>
+    </div>
+    <div class="tp-block">
+      <div class="tp-block-title">TP5 &nbsp;<span style="font-size:10px;color:var(--text3);">선택</span></div>
+      <div class="tp-grid">
+        <div class="field"><label><span id="tp5-label">TP5 가격 (USDT)</span></label><input type="text" id="tp5" placeholder="선택" oninput="handleNumInput(this)" onblur="fmtInput(this)"></div>
+        <div class="field"><label><span id="tp5q-label">익절 USDT</span></label><input type="text" id="tp5q" placeholder="비우면 전체" oninput="handleNumInput(this)" onblur="fmtInput(this)"><div class="sub-hint">비우면 전체 포지션 기준</div></div>
+      </div>
+      <div class="warn-box" id="warn-tp5-low"></div>
+      <div class="result-row" style="margin-top:6px;"><span class="result-label">TP5 수익</span><span class="result-val val-green" id="res-tp5">—</span></div>
+    </div>
+
+    <div class="rr-row">
+      <span class="result-label">
+        손익비
+        <span class="tooltip-wrap">
+          <span class="tooltip-icon">?</span>
+          <span class="tooltip-box">손실 대비 수익 비율. 1:2.00이면 손절폭의 2배 수익 구간. 일반적으로 1:1.5 이상을 권장. 입력된 TP별로 각각 표시됨.</span>
+        </span>
+      </span>
+      <span class="rr-val" id="res-rr">—</span>
+    </div>
+    <div class="result-row" id="liq-row"><span class="result-label">청산가 (예상)</span><span class="result-val val-red" id="res-liq">—</span></div>
+    <div class="total-row">
+      <span class="total-label">총 수익 (분할익절 합산)</span>
+      <span class="total-val" id="res-total">—</span>
+    </div>
+  </div>
+
+  <!-- 6 수수료 -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="badge">6</div>
+      <span class="sec-title">수수료</span>
+      <span class="sec-sub">수정 가능 — 기본값 자동 적용</span>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>
+          수수료율 (%)
+          <span class="tooltip-wrap">
+            <span class="tooltip-icon">?</span>
+            <span class="tooltip-box" id="fee-tooltip-text">지정가 0.02% / 시장가 0.05% 기준 평균 0.035%. 진입+청산 2회 자동 반영. 총 포지션 금액 기준 추정값이며 분할 익절 시 실제 수수료는 이보다 클 수 있음.</span>
+          </span>
+        </label>
+        <input type="number" id="fee-rate" step="0.001" oninput="calc()">
+      </div>
+      <div class="field">
+        <label>수수료 적용 횟수</label>
+        <input type="text" id="fee-count" readonly style="color:var(--text2);" value="진입 + 청산 2회">
+      </div>
+    </div>
+    <div class="result-row"><span class="result-label">예상 수수료 비용</span><span class="result-val val-red" id="res-fee-cost">—</span></div>
+    <div class="total-row">
+      <span class="total-label">수수료 반영 총 수익</span>
+      <span class="total-val" id="res-fee-total">—</span>
+    </div>
+  </div>
+
+  <!-- 7 펀딩비 -->
+  <div class="section" id="funding-section">
+    <div class="sec-header"><div class="badge">7</div><span class="sec-title">펀딩비</span><span class="sec-sub">선택 — 비워두면 제외</span></div>
+    <div class="grid3">
+      <div class="field">
+        <label>현재 펀딩비율 (%)</label>
+        <input type="number" id="fund-rate" placeholder="0.00782" step="0.00001" oninput="calc()">
+        <div style="font-size:var(--fs-sm);color:var(--text3);margin-top:3px;">8시간마다</div>
+      </div>
+      <div class="field">
+        <label>예상 보유 시간 (h)</label>
+        <input type="number" id="fund-hours" placeholder="24" oninput="calc()">
+      </div>
+      <div class="field">
+        <label>펀딩비 횟수</label>
+        <input type="text" id="fund-count" readonly style="color:var(--text2);">
+      </div>
+    </div>
+    <div class="result-row"><span class="result-label">예상 펀딩비 비용</span><span class="result-val val-red" id="res-fund-cost">—</span></div>
+    <div class="total-row">
+      <span class="total-label">수수료 + 펀딩비 반영 총 수익</span>
+      <span class="total-val" id="res-fund-total">—</span>
+    </div>
+  </div>
+
+</div>
+<script>
+var currentUnit = 'usdt';
+var currentMethod = 'A';
+var DEFAULT_FEE_FUTURES = 0.035;
+var DEFAULT_FEE_SPOT = 0.05;
+
+// 숫자 입력 처리 — 콤마 자동 포맷
+function stripComma(s) { return s.replace(/,/g, ''); }
+function parseNum(s) { var n = parseFloat(stripComma(s)); return isNaN(n) ? null : n; }
+function handleNumInput(el) { var raw = stripComma(el.value); el.value = raw; calc(); }
+function fmtInput(el) {
+  var n = parseNum(el.value);
+  if (n === null) return;
+  // KRW 모드 정수 콤마, 나머지 소수점 유지 콤마
+  if (currentUnit === 'krw') {
+    el.value = Math.round(n).toLocaleString('ko-KR');
+  } else {
+    el.value = n.toLocaleString('ko-KR', {maximumFractionDigits: 8});
+  }
+}
+function vt(id) { return parseNum(document.getElementById(id).value); }
+
+function setFontSize(size) {
+  var body = document.getElementById('body');
+  var btns = document.querySelectorAll('.fs-btn');
+  if (size === 'large') { body.classList.add('large'); btns[0].classList.remove('active'); btns[1].classList.add('active'); }
+  else { body.classList.remove('large'); btns[0].classList.add('active'); btns[1].classList.remove('active'); }
+}
+
+function setUnit(u) {
+  currentUnit = u;
+  var btns = document.getElementById('unit-toggle').querySelectorAll('.toggle-btn');
+  btns[0].classList.toggle('active', u === 'usdt');
+  btns[1].classList.toggle('active', u === 'qty');
+  btns[2].classList.toggle('active', u === 'krw');
+  var isKrw = u === 'krw';
+  var hint = document.getElementById('unit-hint');
+  if (u === 'usdt') hint.textContent = '※ USDT: 투자 금액(예: 5,000 USDT)으로 입력';
+  else if (u === 'qty') hint.textContent = '※ 수량: BTC·ETH·SOL 등 코인 개수로 입력';
+  else hint.textContent = '※ KRW: 진입가와 투자 금액 모두 원화로 입력 (예: 진입가 112,000,000 / 금액 5,000,000)';
+
+  var levInput = document.getElementById('leverage');
+  var levTooltip = document.getElementById('lev-tooltip');
+  var dirField = document.getElementById('direction-field');
+
+  if (isKrw) {
+    levInput.value = '1'; levInput.setAttribute('readonly', true);
+    document.getElementById('lev-label').textContent = '배율 (현물)';
+    levTooltip.classList.add('hidden');
+    // 방향 숨김 — 현물은 매수 고정
+    dirField.classList.add('hidden');
+    document.getElementById('direction').value = 'long';
+    document.getElementById('liq-row').classList.add('hidden');
+    document.getElementById('lev-sl-row').classList.add('hidden');
+    document.getElementById('funding-section').classList.add('hidden');
+    document.getElementById('margin-row').classList.add('hidden');
+    // 수량 레이블 변경
+    document.getElementById('qty-label').textContent = '총 투자금액';
+    document.getElementById('pos-label').textContent = '총 투자금액';
+    // 수수료 현물
+    document.getElementById('fee-rate').value = DEFAULT_FEE_SPOT;
+    document.getElementById('fee-tooltip-text').textContent = '업비트 원화마켓 기준 0.05%. 진입+청산 2회 자동 반영. 총 포지션 금액 기준 추정값이며 분할 익절 시 실제 수수료는 이보다 클 수 있음.';
+  } else {
+    levInput.removeAttribute('readonly');
+    if (!levInput.value || levInput.value === '1') levInput.value = '10';
+    document.getElementById('lev-label').textContent = '배율';
+    levTooltip.classList.remove('hidden');
+    dirField.classList.remove('hidden');
+    document.getElementById('liq-row').classList.remove('hidden');
+    document.getElementById('lev-sl-row').classList.remove('hidden');
+    document.getElementById('funding-section').classList.remove('hidden');
+    document.getElementById('margin-row').classList.remove('hidden');
+    document.getElementById('qty-label').textContent = '총 수량';
+    document.getElementById('pos-label').textContent = '총 포지션 금액';
+    document.getElementById('fee-rate').value = DEFAULT_FEE_FUTURES;
+    document.getElementById('fee-tooltip-text').textContent = '지정가 0.02% / 시장가 0.05% 기준 평균 0.035%. 진입+청산 2회 자동 반영. 총 포지션 금액 기준 추정값이며 분할 익절 시 실제 수수료는 이보다 클 수 있음.';
+  }
+
+  var priceUnit = isKrw ? '(KRW)' : '(USDT)';
+  var qLabel = isKrw ? 'KRW' : (u === 'qty' ? '수량' : 'USDT');
+  document.getElementById('a1p-label').textContent = '1차 진입가 ' + priceUnit;
+  document.getElementById('a2p-label').textContent = '2차 진입가 ' + priceUnit;
+  document.getElementById('a3p-label').textContent = '3차 진입가 ' + priceUnit;
+  document.getElementById('a1q-label').textContent = '1차 ' + qLabel;
+  document.getElementById('a2q-label').textContent = '2차 ' + qLabel;
+  document.getElementById('a3q-label').textContent = '3차 ' + qLabel;
+  document.getElementById('b1q-label').textContent = '총 ' + qLabel;
+  document.getElementById('b2q-label').textContent = '총 ' + qLabel;
+  document.getElementById('b3q-label').textContent = '총 ' + qLabel;
+  document.getElementById('sl-label').textContent = '손절가 SL ' + priceUnit;
+  ['tp1','tp2','tp3','tp4','tp5'].forEach(function(tp) {
+    document.getElementById(tp + '-label').textContent = tp.toUpperCase() + ' 가격 ' + priceUnit;
+    document.getElementById(tp + 'q-label').textContent = '익절 ' + qLabel;
+  });
+  calc();
+}
+
+function setMethod(m) {
+  currentMethod = m;
+  var btns = document.getElementById('method-toggle').querySelectorAll('.toggle-btn');
+  btns[0].classList.toggle('active', m === 'A');
+  btns[1].classList.toggle('active', m === 'B');
+  document.getElementById('method-a').classList.toggle('show', m === 'A');
+  document.getElementById('method-b').classList.toggle('show', m === 'B');
+  calc();
+}
+
+function fmt(n, dec) {
+  if (n === null || isNaN(n)) return '—';
+  dec = (dec === undefined) ? 2 : dec;
+  return n.toLocaleString('ko-KR', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+}
+
+function fmtC(n) {
+  if (n === null || isNaN(n)) return '—';
+  if (currentUnit === 'krw') return fmt(Math.round(n), 0) + ' KRW';
+  return fmt(n, 2) + ' USDT';
+}
+
+function toCoins(price, input) {
+  if (input === null || input === undefined) return null;
+  if (currentUnit === 'qty') return input;
+  return (price > 0) ? input / price : null;
+}
+
+function toPosVal(price, input) {
+  if (input === null || input === undefined) return null;
+  if (currentUnit === 'qty') return price * input;
+  return input;
+}
+
+function calcAvg(entries) {
+  var tv = 0, tq = 0;
+  entries.forEach(function(e) {
+    var p = e[0], q = e[1];
+    if (p !== null && q !== null && p > 0 && q > 0) {
+      var pv = toPosVal(p, q);
+      var coins = toCoins(p, q);
+      if (pv !== null && coins !== null && pv > 0 && coins > 0) { tv += pv; tq += coins; }
+    }
+  });
+  if (tq === 0) return null;
+  return { avg: tv / tq, qty: tq, posVal: tv };
+}
+
+function resetTpResults() {
+  ['res-tp1','res-tp2','res-tp3','res-tp4','res-tp5'].forEach(function(id) { document.getElementById(id).textContent = '—'; });
+  ['warn-tp1-low','warn-tp2-low','warn-tp3-low','warn-tp4-low','warn-tp5-low'].forEach(function(id) { document.getElementById(id).classList.remove('show'); });
+  document.getElementById('res-rr').textContent = '—';
+  document.getElementById('res-total').textContent = '—';
+  document.getElementById('res-fee-cost').textContent = '—';
+  document.getElementById('res-fee-total').textContent = '—';
+  document.getElementById('res-fund-cost').textContent = '—';
+  document.getElementById('res-fund-total').textContent = '—';
+  document.getElementById('tp1-hint').textContent = '';
+  document.getElementById('warn-tp-over').classList.remove('show');
+}
+
+function calc() {
+  var isKrw = currentUnit === 'krw';
+  var lev = isKrw ? 1 : (parseFloat(document.getElementById('leverage').value) || 10);
+  var dir = 'long'; // KRW는 항상 매수(long)
+  if (!isKrw) dir = document.getElementById('direction').value;
+
+  var avg = null, totalQty = null, totalPosVal = null;
+
+  if (currentMethod === 'A') {
+    var res = calcAvg([
+      [vt('a1p'), vt('a1q')],
+      [vt('a2p'), vt('a2q')],
+      [vt('a3p'), vt('a3q')]
+    ]);
+    if (res) { avg = res.avg; totalQty = res.qty; totalPosVal = res.posVal; }
+  } else {
+    var tv = 0, tq = 0;
+    [1,2,3].forEach(function(n) {
+      var hi = vt('b'+n+'hi'), lo = vt('b'+n+'lo'), qty = vt('b'+n+'q');
+      var el = document.getElementById('b'+n+'avg');
+      if (hi !== null && lo !== null && qty !== null && hi > 0 && lo > 0 && qty > 0) {
+        var bAvg = (hi+lo)/2;
+        el.textContent = fmtC(bAvg);
+        var pv = toPosVal(bAvg, qty);
+        var coins = toCoins(bAvg, qty);
+        if (pv !== null && coins !== null) { tv += pv; tq += coins; }
+      } else el.textContent = '—';
+    });
+    if (tq > 0) { avg = tv/tq; totalQty = tq; totalPosVal = tv; }
+  }
+
+  // 평단 결과 표시
+  if (avg !== null && totalQty !== null && totalPosVal !== null) {
+    document.getElementById('res-avg').textContent = fmtC(avg);
+    if (isKrw) {
+      document.getElementById('res-qty').textContent = fmtC(totalPosVal);
+      document.getElementById('res-pos').textContent = fmtC(totalPosVal);
+    } else {
+      document.getElementById('res-qty').textContent = currentUnit === 'qty' ? fmt(totalQty, 4) : fmtC(totalPosVal);
+      document.getElementById('res-pos').textContent = fmtC(totalPosVal);
+      document.getElementById('res-margin').textContent = fmtC(totalPosVal / lev);
+    }
+  } else {
+    ['res-avg','res-qty','res-pos','res-margin'].forEach(function(id) { document.getElementById(id).textContent = '—'; });
+  }
+
+  var sl = vt('sl');
+  if (avg === null || sl === null) {
+    ['res-sl-pct','res-sl-lev','res-liq'].forEach(function(id) { document.getElementById(id).textContent = '—'; });
+    document.getElementById('warn-sl-lev').classList.remove('show');
+    document.getElementById('warn-sl-dir').classList.remove('show');
+    document.getElementById('fund-count').value = '';
+    resetTpResults();
+    return;
+  }
+
+  // SL 방향 오류 (KRW는 항상 매수라 SL < avg 만 체크)
+  var dirWrong = (dir === 'long' && sl >= avg) || (dir === 'short' && sl <= avg);
+  var dirWarnEl = document.getElementById('warn-sl-dir');
+  if (dirWrong) {
+    dirWarnEl.textContent = dir === 'long'
+      ? '⚠️ 매수 포지션에서 손절가는 평단보다 낮아야 합니다.'
+      : '⚠️ 매도 포지션에서 손절가는 평단보다 높아야 합니다.';
+    dirWarnEl.classList.add('show');
+  } else dirWarnEl.classList.remove('show');
+
+  var slDiff = dir === 'long' ? avg - sl : sl - avg;
+  var slPct = (Math.abs(slDiff) / avg) * 100;
+  var slLev = slPct * lev;
+  document.getElementById('res-sl-pct').textContent = '-' + fmt(slPct, 2) + '%';
+  if (!isKrw) document.getElementById('res-sl-lev').textContent = '-' + fmt(slLev, 2) + '% (' + lev + 'x)';
+  document.getElementById('warn-sl-lev').classList.toggle('show', slLev > 30 && !dirWrong && !isKrw);
+
+  if (!isKrw) {
+    var liqPrice = dir === 'long' ? avg * (1 - 1/lev) : avg * (1 + 1/lev);
+    document.getElementById('res-liq').textContent = fmtC(liqPrice);
+  }
+
+  if (dirWrong) {
+    resetTpResults();
+    document.getElementById('fund-count').value = '';
+    return;
+  }
+
+  var tp1Min = avg + Math.abs(slDiff);
+  document.getElementById('tp1-hint').textContent = 'RR 1:1 최소값 → ' + fmtC(tp1Min);
+
+  var tpPrices = [vt('tp1'), vt('tp2'), vt('tp3'), vt('tp4'), vt('tp5')];
+  var tpQtyInputs = [vt('tp1q'), vt('tp2q'), vt('tp3q'), vt('tp4q'), vt('tp5q')];
+
+  // TP 초과 경고 — KRW면 금액 기준, 아니면 코인 기준
+  var tpSum = 0;
+  tpPrices.forEach(function(tp, i) {
+    if (tp !== null && tpQtyInputs[i] !== null) {
+      if (isKrw || currentUnit === 'usdt') {
+        tpSum += tpQtyInputs[i]; // 금액 기준
+      } else {
+        tpSum += tpQtyInputs[i]; // 코인 수량 기준
+      }
+    }
+  });
+  var overWarn = document.getElementById('warn-tp-over');
+  var overLimit = (isKrw || currentUnit === 'usdt') ? totalPosVal : totalQty;
+  if (overLimit !== null && tpSum > 0 && tpSum > overLimit + 0.000001) {
+    overWarn.classList.add('show');
+  } else overWarn.classList.remove('show');
+
+  // TP 수익 계산
+  var totalProfit = 0, hasAnyTp = false, rrParts = [];
+  tpPrices.forEach(function(tp, i) {
+    var el = document.getElementById('res-tp' + (i+1));
+    var warnEl = document.getElementById('warn-tp' + (i+1) + '-low');
+    if (tp !== null) {
+      // TP가 평단보다 낮으면 경고 (매수 기준)
+      var tpValid = tp > avg; // KRW는 항상 매수, 선물도 long 기준 체크
+      if (!isKrw) tpValid = (dir === 'long' && tp > avg) || (dir === 'short' && tp < avg);
+      if (!tpValid) {
+        el.textContent = '—';
+        warnEl.textContent = '⚠️ TP' + (i+1) + ' 가격이 평단보다 낮습니다. 익절가는 평단보다 높아야 합니다.';
+        warnEl.classList.add('show');
+        return;
+      }
+      warnEl.classList.remove('show');
+      hasAnyTp = true;
+      var tpDiff = dir === 'long' ? tp - avg : avg - tp;
+      var tpPct = (tpDiff / avg) * 100;
+      var usePosVal = totalPosVal;
+      if (tpQtyInputs[i] !== null && totalQty !== null) {
+        var inputCoins = toCoins(tp, tpQtyInputs[i]);
+        if (inputCoins !== null) usePosVal = inputCoins * avg;
+      }
+      var tpProfit = (tpDiff / avg) * usePosVal * lev;
+      totalProfit += tpProfit;
+      el.textContent = '+' + fmt(tpPct, 2) + '%  /  +' + fmtC(tpProfit);
+      rrParts.push('TP' + (i+1) + ': 1:' + fmt(tpDiff / Math.abs(slDiff), 2));
+    } else {
+      el.textContent = '—';
+      warnEl.classList.remove('show');
+    }
+  });
+
+  document.getElementById('res-rr').textContent = rrParts.length > 0 ? rrParts.join('  /  ') : '—';
+  document.getElementById('res-total').textContent = hasAnyTp ? '+' + fmtC(totalProfit) : '—';
+
+  // 수수료 (진입+청산 2회, 항상 계산)
+  var feeRate = parseFloat(document.getElementById('fee-rate').value);
+  if (isNaN(feeRate)) feeRate = isKrw ? DEFAULT_FEE_SPOT : DEFAULT_FEE_FUTURES;
+  var feeCost = totalPosVal !== null ? totalPosVal * (feeRate / 100) * 2 : 0;
+  document.getElementById('res-fee-cost').textContent = totalPosVal !== null ? '-' + fmtC(feeCost) : '—';
+  if (hasAnyTp && totalPosVal !== null) {
+    var feeTotal = totalProfit - feeCost;
+    document.getElementById('res-fee-total').textContent = (feeTotal >= 0 ? '+' : '') + fmtC(feeTotal);
+  } else document.getElementById('res-fee-total').textContent = '—';
+
+  // 펀딩비 (KRW 제외)
+  if (!isKrw) {
+    var fundRateVal = parseFloat(document.getElementById('fund-rate').value);
+    var fundHours = parseFloat(document.getElementById('fund-hours').value);
+    if (!isNaN(fundRateVal) && !isNaN(fundHours) && totalPosVal !== null) {
+      var cnt = Math.floor(fundHours / 8);
+      document.getElementById('fund-count').value = cnt + '회';
+      var fundCost = totalPosVal * (fundRateVal / 100) * cnt;
+      document.getElementById('res-fund-cost').textContent = '-' + fmtC(fundCost);
+      if (hasAnyTp) {
+        var fundTotal = totalProfit - feeCost - fundCost;
+        document.getElementById('res-fund-total').textContent = (fundTotal >= 0 ? '+' : '') + fmtC(fundTotal);
+      } else document.getElementById('res-fund-total').textContent = '—';
+    } else {
+      document.getElementById('fund-count').value = '';
+      document.getElementById('res-fund-cost').textContent = '—';
+      document.getElementById('res-fund-total').textContent = '—';
+    }
+  }
+}
+
+// 초기화
+document.getElementById('fee-rate').value = DEFAULT_FEE_FUTURES;
+document.getElementById('a1q-label').textContent = '1차 USDT';
+document.getElementById('a2q-label').textContent = '2차 USDT';
+document.getElementById('a3q-label').textContent = '3차 USDT';
+document.getElementById('b1q-label').textContent = '총 USDT';
+document.getElementById('b2q-label').textContent = '총 USDT';
+document.getElementById('b3q-label').textContent = '총 USDT';
+['tp1q-label','tp2q-label','tp3q-label','tp4q-label','tp5q-label'].forEach(function(id) {
+  document.getElementById(id).textContent = '익절 USDT';
+});
+calc();
+</script>
+</body>
+</html>
