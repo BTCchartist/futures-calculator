@@ -310,5 +310,23 @@
     "time": "2026-05-23 12:30",
     "price": 22.61,
     "sig_type": "rsi"
+  },
+  {
+    "key": "빗썸_THE",
+    "time": "2026-05-23 13:00",
+    "price": 137.0,
+    "sig_type": "rsi"
+  },
+  {
+    "key": "빗썸_AMP",
+    "time": "2026-05-23 13:00",
+    "price": 1.234,
+    "sig_type": "rsi"
+  },
+  {
+    "key": "빗썸_SXT",
+    "time": "2026-05-23 13:00",
+    "price": 17.36,
+    "sig_type": "rsi"
   }
 ]
