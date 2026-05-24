@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "key": "빗썸_WIKEN",
+    "time": "2026-05-24 09:00",
+    "price": 3.267,
+    "sig_type": "trend"
+  },
+  {
+    "key": "빗썸_ZTX",
+    "time": "2026-05-24 09:00",
+    "price": 0.8101,
+    "sig_type": "trend"
+  },
+  {
+    "key": "바이낸스_NIGHT",
+    "time": "2026-05-24 09:00",
+    "price": 0.03368,
+    "sig_type": "trend"
+  }
+]
