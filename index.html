@@ -2114,7 +2114,7 @@ async function journalLogin(){
   var password=document.getElementById('j-password').value||'';
   if(!username||!password){jShowErr('j-login-err','아이디와 비밀번호를 입력해주세요');return;}
   try{
-    var res=await fetch(TRADE_API+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username,password})});
+    var res=await fetch(TRADE_API+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fanding_id:username,password})});
     var data=await res.json();
     if(!res.ok||data.error){jShowErr('j-login-err',data.error||'로그인 실패');return;}
     jToken=data.token;jUser=username;
@@ -2133,7 +2133,7 @@ async function journalRegister(){
   if(password.length<8){jShowErr('j-reg-err','비밀번호는 8자 이상');return;}
   if(password!==pw2){jShowErr('j-reg-err','비밀번호 불일치');return;}
   try{
-    var res=await fetch(TRADE_API+'/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username,password,fanding_id})});
+    var res=await fetch(TRADE_API+'/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fanding_id:fanding_id,password,username})});
     var data=await res.json();
     if(!res.ok||data.error){jShowErr('j-reg-err',data.error||'가입 실패');return;}
     alert('가입 완료! 로그인해주세요.');
