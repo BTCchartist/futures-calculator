@@ -1973,8 +1973,10 @@ function showJournalLogin(){
   document.getElementById('journal-form-register').style.display='none';
 }
 function showJournalRegister(){
-  document.getElementById('journal-form-login').style.display='none';
-  document.getElementById('journal-form-register').style.display='block';
+  var a=document.getElementById('journal-form-login');
+  var b=document.getElementById('journal-form-register');
+  if(a)a.style.display='none';
+  if(b)b.style.display='block';
 }
 
 function journalLogin(){
@@ -2029,14 +2031,14 @@ function journalLogout(){
   localStorage.removeItem('journal_user');
   localStorage.removeItem('journal_pw');
   var main=document.getElementById('journal-main');
-  var loginWrap=document.getElementById('journal-login-wrap');
+  var loginWrap=document.getElementById('j-auth-screen');
   if(main)main.classList.remove('show');
-  if(loginWrap)loginWrap.style.display='flex';
+  if(loginWrap)loginWrap.style.display='';
   showJournalLogin();
 }
 
 function showJournalMain(){
-  var loginWrap=document.getElementById('journal-login-wrap');
+  var loginWrap=document.getElementById('j-auth-screen');
   var main=document.getElementById('journal-main');
   if(loginWrap)loginWrap.style.display='none';
   if(main)main.classList.add('show');
