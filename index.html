@@ -2247,9 +2247,9 @@ function renderJournalList(){
     html+='</div>';
     html+='<div class="jti-actions">';
     if(t.status==='open'){
-      html+='<button class="jti-close-btn" onclick="journalCloseModal('"+t.id+"')">청산 입력</button>';
+      html+='<button class="jti-close-btn" onclick="journalCloseModal('+JSON.stringify(t.id)+')">청산 입력</button>';
     }
-    html+='<button class="jti-del-btn" onclick="journalDelete('"+t.id+"')">삭제</button>';
+    html+='<button class="jti-del-btn" onclick="journalDelete('+JSON.stringify(t.id)+')">삭제</button>';
     html+='</div>';
     if(t.memo){html+='<div style="font-size:11px;color:var(--text3);margin-top:6px;">📝 '+t.memo+'</div>';}
     html+='<div style="font-size:10px;color:var(--text3);margin-top:4px;">'+t.date+'</div>';
