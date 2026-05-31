@@ -1404,21 +1404,19 @@ function filterAltcoin(f){
   });
   var activeBtn=document.getElementById('af-'+f);
   if(activeBtn)activeBtn.classList.add('active');
-  if(f==='rsi'&&!rsiUnlocked){
-    lockRsi();
+  var wrap=document.getElementById('rsi-blur-wrap');
+  var content=document.getElementById('rsi-blur-content');
+  var paywall=document.getElementById('rsi-paywall');
+  if(f==='rsi'){
+    if(wrap)wrap.style.display='block';
+    if(!rsiUnlocked){lockRsi();}
+    else{if(content)content.classList.remove('blurred');if(paywall)paywall.classList.remove('show');}
   }else if(f==='all'){
-    var content=document.getElementById('rsi-blur-content');
-    var paywall=document.getElementById('rsi-paywall');
-    if(content)content.classList.remove('blurred');
-    if(paywall)paywall.classList.remove('show');
-  }else if(f!=='rsi'&&f!=='all'){
-    var content=document.getElementById('rsi-blur-content');
-    var paywall=document.getElementById('rsi-paywall');
-    if(content)content.classList.remove('blurred');
-    if(paywall)paywall.classList.remove('show');
-  }else if(rsiUnlocked){
-    var content=document.getElementById('rsi-blur-content');
-    var paywall=document.getElementById('rsi-paywall');
+    if(wrap)wrap.style.display='block';
+    if(!rsiUnlocked){lockRsi();}
+    else{if(content)content.classList.remove('blurred');if(paywall)paywall.classList.remove('show');}
+  }else{
+    if(wrap)wrap.style.display='none';
     if(content)content.classList.remove('blurred');
     if(paywall)paywall.classList.remove('show');
   }
