@@ -1038,8 +1038,7 @@
 
   <!-- 로그인 영역 -->
   <div id="j-auth-screen">
-    <div style="max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #2a2a2a;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;position:relative;">
-      <button onclick="switchTab('btc',document.getElementById('tab-btn-btc'))" style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);color:#666;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='#666'">✕</button>
+    <div style="max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #2a2a2a;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;">
       <div style="font-size:18px;font-weight:700;color:#C9A84C;margin-bottom:8px;">📒 매매일지</div>
       <div style="font-size:13px;color:#777;margin-bottom:24px;line-height:1.6;">차티스트 인사이트 멤버 전용<br>로그인 후 매매를 기록하세요</div>
       <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">아이디 (팬딩)</label><input id="jl-id" type="text" placeholder="팬딩 아이디" autocomplete="username" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
@@ -1047,17 +1046,6 @@
       <div id="journal-login-error" class="journal-error"></div>
       <button onclick="journalLogin()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">로그인</button>
       <button onclick="showJournalRegister()" style="width:100%;background:transparent;border:0.5px solid #2a2a2a;border-radius:6px;padding:9px;color:#777;font-size:12px;cursor:pointer;margin-top:8px;">처음 오셨나요? <span style="color:#C9A84C;font-weight:600;">회원가입 →</span></button>
-    </div>
-    <div id="j-register-wrap" style="display:none;max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #2a2a2a;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;position:relative;">
-      <button onclick="showJournalLoginForm()" style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);color:#666;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='#666'">✕</button>
-      <div style="font-size:18px;font-weight:700;color:#C9A84C;margin-bottom:8px;">📒 회원가입</div>
-      <div style="font-size:13px;color:#777;margin-bottom:24px;line-height:1.6;">팬딩 아이디로 가입하세요</div>
-      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">아이디 (팬딩)</label><input id="jr-id" type="text" placeholder="팬딩 아이디" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
-      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">비밀번호</label><input id="jr-pw" type="password" placeholder="4자 이상" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
-      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">비밀번호 확인</label><input id="jr-pw2" type="password" placeholder="비밀번호 재입력" onkeydown="if(event.key==='Enter')journalRegister()" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
-      <div id="journal-register-error" class="journal-error"></div>
-      <button onclick="journalRegister()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">가입하기</button>
-      <button onclick="showJournalLoginForm()" style="width:100%;background:transparent;border:0.5px solid #2a2a2a;border-radius:6px;padding:9px;color:#777;font-size:12px;cursor:pointer;margin-top:8px;">← 로그인으로 돌아가기</button>
     </div>
   </div>
 
@@ -1504,14 +1492,9 @@ function filterAltcoin(f){
   });
   var activeBtn=document.getElementById('af-'+f);
   if(activeBtn)activeBtn.classList.add('active');
-  if((f==='rsi'||f==='all')&&!rsiUnlocked){
+  if(f==='rsi'&&!rsiUnlocked){
     lockRsi();
-  }else if(f!=='rsi'&&f!=='all'){
-    var content=document.getElementById('rsi-blur-content');
-    var paywall=document.getElementById('rsi-paywall');
-    if(content)content.classList.remove('blurred');
-    if(paywall)paywall.classList.remove('show');
-  }else if(rsiUnlocked){
+  }else if(f!=='rsi'){
     var content=document.getElementById('rsi-blur-content');
     var paywall=document.getElementById('rsi-paywall');
     if(content)content.classList.remove('blurred');
@@ -1986,22 +1969,14 @@ function initJournal(){
 }
 
 function showJournalLogin(){
-  var lbox=document.getElementById('j-auth-screen').querySelector('div:first-child');
-  var r=document.getElementById('j-register-wrap');
-  if(lbox)lbox.style.display='';
-  if(r)r.style.display='none';
-}
-function showJournalLoginForm(){
-  var lbox=document.querySelector('#j-auth-screen > div:first-child');
-  var r=document.getElementById('j-register-wrap');
-  if(lbox)lbox.style.display='';
-  if(r)r.style.display='none';
+  document.getElementById('journal-form-login').style.display='block';
+  document.getElementById('journal-form-register').style.display='none';
 }
 function showJournalRegister(){
-  var lbox=document.querySelector('#j-auth-screen > div:first-child');
-  var r=document.getElementById('j-register-wrap');
-  if(lbox)lbox.style.display='none';
-  if(r)r.style.display='block';
+  var a=document.getElementById('journal-form-login');
+  var b=document.getElementById('journal-form-register');
+  if(a)a.style.display='none';
+  if(b)b.style.display='block';
 }
 
 function journalLogin(){
@@ -2059,7 +2034,7 @@ function journalLogout(){
   var loginWrap=document.getElementById('j-auth-screen');
   if(main){main.classList.remove('show');main.style.display='none';}
   if(loginWrap)loginWrap.style.display='';
-  showJournalLoginForm();
+  showJournalLogin();
 }
 
 function showJournalMain(){
@@ -2123,14 +2098,6 @@ function renderJournalStats(){
   renderTickerWr();
 }
 
-function updateStatBadges(wr,totalPnl){
-  try{
-    var wb=document.getElementById('jstat-wr-badge');
-    var pb=document.getElementById('jstat-pnl-badge');
-    if(wb){wb.textContent=wr>=60?'STRONG':wr>=50?'GOOD':wr>0?'WEAK':'—';wb.className='stat-badge '+(wr>=60?'green':wr>=50?'gold':'red');}
-    if(pb){pb.textContent=totalPnl>0?'PROFIT':totalPnl<0?'LOSS':'—';pb.className='stat-badge '+(totalPnl>0?'green':totalPnl<0?'red':'neu');}
-  }catch(e){}
-}
 function renderMonthChart(){
   var el=document.getElementById('journal-month-chart');
   if(!el)return;
