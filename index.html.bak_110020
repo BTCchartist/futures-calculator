@@ -1061,7 +1061,7 @@
     </div>
   </div>
 
-  <div class="journal-main" id="journal-main">
+  <div class="journal-main" id="journal-main" style="display:none;">
 
 <!-- ══ 매뉴얼 팝업 ══ -->
 <div class="manual-overlay" id="manual-overlay">
