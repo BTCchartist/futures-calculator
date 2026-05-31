@@ -2193,7 +2193,7 @@ function journalAdd(){
     .then(function(d){
       if(d.ok){
         journalTrades.unshift(d.trade);
-        renderJournalStats();renderJournalList();
+        try{renderJournalStats();renderJournalList();}catch(e){console.error('render err:',e);}
         // 입력 초기화
         document.getElementById('jf-ticker').value='';
         document.getElementById('jf-entry').value='';
