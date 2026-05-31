@@ -13,8 +13,7 @@
 <meta name="google-site-verification" content="hL9PoQ1kGhUZglEKOXMLVIG8iG-mmZ5PM8-VNtfWsms" />
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAgACADASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAABwEDBAUGCP/EACgQAAEEAQMDBAIDAAAAAAAAAAECAwQFEQAGIQcTURIiMWEyQRRxgf/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAmEQABAgYCAQQDAAAAAAAAAAABAgQAAxEhMUEFEqETQmGxwdHw/9oADAMBAAIRAxEAPwDygVgHGDqO4PB10O0aF25g3LsKIZ9lFabMWGlJUpfqXhawgcrKR8J+884xruOmvR1u1uVVm9p07b0hcZbrTHbQlxs49vcC/wBkn8Bz5IPGouuWatAr1VU66ycA2Avgw8tpNm06jN4Ju4PB1IWCcYOmzqT0JiVO2a2z2buBy9nvKU3IrF9vvrKflbQR8/aDz4J+NGu7aU1NTRuTK9VbaPIdEqOrIKkpUO24pB/BRGQRxnAOASdZpyzV2EmUuvbW8VuMi0CY1my69hj90+40MGbMrpyJdfMkQ5CD7XmHChaf6IIOnXolvFi2nX1PInTHJq4f8qDLsCqQ9IcSgpfS5wr2qSQoJOUpCT9kgxbBOcnWVTzp1PYtWNZMeiS2s+h1s4IyCCPsEEgg8EHS8pxiH8lSDZRFj81qPP5gtnJkLCtf1YRd531hRzK6usZM5tSmFSfVEcLTsUnKWVtnjgYJ9IOCOPGDOZLlTpipMyU9KeUeXXllSlf6edWWEiTYSlSpshx95QAK1H9DgAeAPA1QGwDnJ1RgwS1lge7Z8wXLkz1k6j//2Q==">
-<link rel="apple-touch-icon" sizes="192x192" href="data:image/jpeg;base64,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">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32v2.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192v2.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512v2.png">
@@ -770,8 +769,7 @@
     <div class="btc-paywall-inline" id="btc-paywall-inline">
       <div class="paywall-box" onclick="event.stopPropagation()">
         <div class="paywall-icon">🔒</div>
-        <button id="btc-pw-close-btn" onclick="document.getElementById('btc-paywall-overlay').style.display='none'" style="position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);color:#666;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='#666'">✕</button>
-<div class="paywall-title">멤버십 전용 데이터</div>
+        <div class="paywall-title">멤버십 전용 데이터</div>
         <div class="paywall-desc">팬딩 멤버십 가입 후<br>비트코인 신호를<br>열람할 수 있습니다.</div>
         <input class="paywall-input" id="btc-pw-input2" type="password" placeholder="••••" maxlength="10" onkeydown="if(event.key==='Enter')checkBtcPasswordInline()">
         <button class="paywall-btn" onclick="checkBtcPasswordInline()">비밀번호 입력</button>
@@ -1037,92 +1035,198 @@
 
 <!-- ══ 매매일지 탭 ══ -->
 <div class="tab-content" id="tab-journal">
-  <div id="j-auth-screen" style="display:block;">
-    <div style="max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #242424;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;position:relative;">
-      <h2 style="font-size:18px;font-weight:700;color:#C9A84C;margin-bottom:8px;">📒 매매일지</h2>
-      <p style="font-size:13px;color:#777;margin-bottom:20px;line-height:1.6;">차티스트 인사이트 멤버 전용<br>내 매매를 기록하고 분석하세요</p>
-      <div style="display:flex;margin-bottom:20px;border-bottom:1px solid #242424;">
-        <button id="j-tab-login-btn" onclick="jSwitchAuthTab('login')" style="flex:1;padding:10px;background:none;border:none;border-bottom:2px solid #C9A84C;color:#C9A84C;font-size:13px;cursor:pointer;margin-bottom:-1px;">로그인</button>
-        <button id="j-tab-reg-btn" onclick="jSwitchAuthTab('register')" style="flex:1;padding:10px;background:none;border:none;border-bottom:2px solid transparent;color:#777;font-size:13px;cursor:pointer;margin-bottom:-1px;">회원가입</button>
-      </div>
-      <div id="j-login-section">
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">아이디</label><input id="j-username" type="text" placeholder="아이디 입력" autocomplete="username" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">비밀번호</label><input id="j-password" type="password" placeholder="비밀번호 입력" autocomplete="current-password" onkeydown="if(event.key==='Enter')journalLogin()" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div id="j-login-err" style="background:rgba(226,83,74,0.12);border:1px solid rgba(226,83,74,0.3);border-radius:6px;color:#e2534a;font-size:12px;padding:8px 12px;margin-bottom:10px;display:none;"></div>
-        <button onclick="journalLogin()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;">로그인</button>
-      </div>
-      <div id="j-register-section" style="display:none;">
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">아이디</label><input id="j-reg-username" type="text" placeholder="영문+숫자 4자 이상" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">팬딩 아이디</label><input id="j-reg-fanding" type="text" placeholder="팬딩 회원 아이디" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">비밀번호</label><input id="j-reg-pw" type="password" placeholder="8자 이상" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">비밀번호 확인</label><input id="j-reg-pw2" type="password" placeholder="비밀번호 재입력" onkeydown="if(event.key==='Enter')journalRegister()" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div id="j-reg-err" style="background:rgba(226,83,74,0.12);border:1px solid rgba(226,83,74,0.3);border-radius:6px;color:#e2534a;font-size:12px;padding:8px 12px;margin-bottom:10px;display:none;"></div>
-        <button onclick="journalRegister()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;">회원가입</button>
-      </div>
+<div class="container" style="padding-top:16px;">
+
+  <!-- 로그인 영역 -->
+  <div id="j-auth-screen">
+    <div style="max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #2a2a2a;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;position:relative;">
+      <button onclick="switchTab('btc',document.getElementById('tab-btn-btc'))" style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);color:#666;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='#666'">✕</button>
+      <div style="font-size:18px;font-weight:700;color:#C9A84C;margin-bottom:8px;">📒 매매일지</div>
+      <div style="font-size:13px;color:#777;margin-bottom:24px;line-height:1.6;">차티스트 인사이트 멤버 전용<br>로그인 후 매매를 기록하세요</div>
+      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">아이디 (팬딩)</label><input id="jl-id" type="text" placeholder="팬딩 아이디" autocomplete="username" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">비밀번호</label><input id="jl-pw" type="password" placeholder="비밀번호" onkeydown="if(event.key==='Enter')journalLogin()" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+      <div id="journal-login-error" class="journal-error"></div>
+      <button onclick="journalLogin()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">로그인</button>
+      <button onclick="showJournalRegister()" style="width:100%;background:transparent;border:0.5px solid #2a2a2a;border-radius:6px;padding:9px;color:#777;font-size:12px;cursor:pointer;margin-top:8px;">처음 오셨나요? <span style="color:#C9A84C;font-weight:600;">회원가입 →</span></button>
+    </div>
+    <div id="j-register-wrap" style="display:none;max-width:360px;margin:60px auto;background:#1a1a1a;border:1px solid #2a2a2a;border-top:2px solid #C9A84C;border-radius:10px;padding:36px 32px;position:relative;">
+      <button onclick="showJournalLoginForm()" style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.12);color:#666;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='#666'">✕</button>
+      <div style="font-size:18px;font-weight:700;color:#C9A84C;margin-bottom:8px;">📒 회원가입</div>
+      <div style="font-size:13px;color:#777;margin-bottom:24px;line-height:1.6;">팬딩 아이디로 가입하세요</div>
+      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">아이디 (팬딩)</label><input id="jr-id" type="text" placeholder="팬딩 아이디" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">비밀번호</label><input id="jr-pw" type="password" placeholder="4자 이상" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">비밀번호 확인</label><input id="jr-pw2" type="password" placeholder="비밀번호 재입력" onkeydown="if(event.key==='Enter')journalRegister()" style="width:100%;background:#111;border:1px solid #2a2a2a;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+      <div id="journal-register-error" class="journal-error"></div>
+      <button onclick="journalRegister()" style="width:100%;background:#C9A84C;color:#000;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px;">가입하기</button>
+      <button onclick="showJournalLoginForm()" style="width:100%;background:transparent;border:0.5px solid #2a2a2a;border-radius:6px;padding:9px;color:#777;font-size:12px;cursor:pointer;margin-top:8px;">← 로그인으로 돌아가기</button>
     </div>
   </div>
-  <div id="j-main-screen" style="display:none;padding:20px 16px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-      <div><div style="font-size:16px;font-weight:700;color:#C9A84C;">📒 매매일지</div><div style="font-size:12px;color:#666;margin-top:2px;" id="j-user-label"></div></div>
-      <button onclick="journalLogout()" style="background:transparent;color:#777;border:1px solid #242424;border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;">로그아웃</button>
+
+  <div class="journal-main" id="journal-main">
+
+<!-- ══ 매뉴얼 팝업 ══ -->
+<div class="manual-overlay" id="manual-overlay">
+  <div class="manual-box">
+    <div class="manual-header">
+      <div class="manual-title">📖 차티스트 인사이트 사용 가이드</div>
+      <button class="manual-close" onclick="hideManual()">✕</button>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
-      <div style="background:#1a1a1a;border:1px solid #242424;border-radius:10px;padding:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div><div style="font-size:10px;color:#777;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:8px;">총 매매</div><div style="font-size:22px;font-weight:700;color:#e2e2e2;" id="j-s-total">-</div></div>
-      <div style="background:#1a1a1a;border:1px solid #242424;border-radius:10px;padding:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;" id="j-s-wr-bar"></div><div style="font-size:10px;color:#777;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:8px;">승률</div><div style="font-size:22px;font-weight:700;" id="j-s-wr">-</div></div>
-      <div style="background:#1a1a1a;border:1px solid #242424;border-radius:10px;padding:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;" id="j-s-pnl-bar"></div><div style="font-size:10px;color:#777;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:8px;">총 손익</div><div style="font-size:22px;font-weight:700;" id="j-s-pnl">-</div></div>
-      <div style="background:#1a1a1a;border:1px solid #242424;border-radius:10px;padding:16px;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div><div style="font-size:10px;color:#777;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:8px;">평균 RR</div><div style="font-size:22px;font-weight:700;color:#e2e2e2;" id="j-s-rr">-</div></div>
+    <div class="manual-tabs">
+      <button class="manual-tab active" onclick="switchManualTab('btc',this)">₿ 비트코인</button>
+      <button class="manual-tab" onclick="switchManualTab('alt',this)">📊 알트코인</button>
+      <button class="manual-tab" onclick="switchManualTab('stock',this)">📈 주식</button>
+      <button class="manual-tab" onclick="switchManualTab('macro',this)">🌐 매크로</button>
+      <button class="manual-tab" onclick="switchManualTab('calc',this)">🧮 계산기</button>
     </div>
-    <div style="background:#1a1a1a;border:1px solid #242424;border-left:3px solid #C9A84C;border-radius:10px;padding:20px;margin-bottom:20px;">
-      <div style="font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:16px;">신규 매매 기록</div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">종목</label><input id="j-ticker" type="text" placeholder="BTCUSDT" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">방향</label><select id="j-dir" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"><option value="LONG">LONG</option><option value="SHORT">SHORT</option></select></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">배율</label><input id="j-lev" type="text" placeholder="10x" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">진입일</label><input id="j-date" type="date" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div>
+    <div class="manual-body">
+      <div class="manual-section active" id="manual-btc">
+        <div class="manual-section-title">LONG / SHORT 알림</div>
+        <div class="manual-block"><div class="manual-block-body">이동평균선 기반 알고리즘이 감지한<br>10분봉 · 1시간봉 진입 알림입니다.</div></div>
+        <div class="manual-block"><div class="manual-block-title">🔴 LONG</div><div class="manual-block-body">매수 진입 알림</div></div>
+        <div class="manual-block"><div class="manual-block-title">🔵 SHORT</div><div class="manual-block-body">매도 진입 알림</div></div>
+        <div class="manual-divider"></div>
+        <div class="manual-block"><div class="manual-block-title">진입가 &nbsp;<a class="manual-badge-lock" href="https://fanding.kr/@bzcLu6QCTdMe/membership/" target="_blank">🔒 멤버십 전용</a></div><div class="manual-block-body">비밀번호 입력 후 열람하세요.</div></div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px;">
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">진입가</label><input id="j-entry" type="text" placeholder="103,450" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">청산가</label><input id="j-exit" type="text" placeholder="—" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">투자금($)</label><input id="j-size" type="text" placeholder="1,000" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">손절가</label><input id="j-sl" type="text" placeholder="—" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-        <div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">목표가</label><input id="j-tp" type="text" placeholder="—" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
+      <div class="manual-section" id="manual-alt">
+        <div class="manual-section-title">알트코인 네비게이션</div>
+        <div class="manual-block"><div class="manual-block-body">업비트 · 빗썸 · 바이낸스<br>전 종목을 매일 자동 스캐닝합니다.</div></div>
+        <div class="manual-divider"></div>
+        <div class="manual-block"><div class="manual-block-title">🚀 추세전환</div><div class="manual-block-body">일봉 기준 하락 → 상승 추세로<br>전환되는 초입 종목입니다.</div></div>
+        <div class="manual-block"><div class="manual-block-title">🔀 이평선 수렴</div><div class="manual-block-body">단기 · 중기 · 장기 이동평균선이<br>한 점으로 수렴하는 종목입니다.<br><br>수렴 이후 방향성이 결정되는<br>변곡점에 주목하세요.</div></div>
+        <div class="manual-block"><div class="manual-block-title">📈 RSI 다이버전스 &nbsp;<a class="manual-badge-lock" href="https://fanding.kr/@bzcLu6QCTdMe/membership/" target="_blank">🔒 멤버십 전용</a></div><div class="manual-block-body">가격 하락 + RSI 상승<br>= 강세 다이버전스<br><br>추세 반전의 선행 신호입니다.</div></div>
       </div>
-      <div style="margin-bottom:14px;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;">메모</label><input id="j-memo" type="text" placeholder="진입 근거, 특이사항..." style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='#242424'"></div>
-      <div style="display:flex;gap:8px;justify-content:flex-end;">
-        <button onclick="jResetForm()" style="background:transparent;color:#777;border:1px solid #242424;border-radius:6px;padding:9px 16px;font-size:13px;cursor:pointer;">초기화</button>
-        <button onclick="journalAdd()" style="background:#C9A84C;color:#000;border:none;border-radius:6px;padding:9px 24px;font-size:13px;font-weight:700;cursor:pointer;">저장</button>
+      <div class="manual-section" id="manual-stock">
+        <div class="manual-section-title">주식 네비게이션</div>
+        <div class="manual-block"><div class="manual-block-body">코스피 · S&amp;P500 전 종목을<br>장 마감 후 자동 스캐닝합니다.</div></div>
+        <div class="manual-divider"></div>
+        <div class="manual-block"><div class="manual-block-title">🚀 추세전환</div><div class="manual-block-body">장기 추세 반전 알림</div></div>
+        <div class="manual-block"><div class="manual-block-title">🔀 이평선 수렴</div><div class="manual-block-body">이동평균선 수렴 시점 알림</div></div>
+        <div class="manual-block"><div class="manual-block-title">📈 RSI 다이버전스</div><div class="manual-block-body">추세 반전 선행 알림</div></div>
+        <div class="manual-divider"></div>
+        <div class="manual-block"><div class="manual-block-body">※ 데이터는 장 마감 후 갱신됩니다.</div></div>
       </div>
-      <div id="j-add-err" style="background:rgba(226,83,74,0.12);border:1px solid rgba(226,83,74,0.3);border-radius:6px;color:#e2534a;font-size:12px;padding:8px 12px;margin-top:10px;display:none;"></div>
+      <div class="manual-section" id="manual-macro">
+        <div class="manual-section-title">시장 환경 지표</div>
+        <div class="manual-block"><div class="manual-block-title">📅 경제캘린더</div><div class="manual-block-body">미국 주요 경제지표 발표 일정<br>높음 ★★★ 기준</div></div>
+        <div class="manual-block"><div class="manual-block-title">😨 공포탐욕지수</div><div class="manual-block-body">0 = 극도 공포 · 100 = 극도 탐욕</div></div>
+        <div class="manual-block"><div class="manual-block-title">📊 VIX 변동성</div><div class="manual-block-body">20↓ 안정 · 30↑ 경계</div></div>
+        <div class="manual-block"><div class="manual-block-title">📉 S&amp;P500 · 나스닥</div><div class="manual-block-body">전고점 대비 낙폭</div></div>
+        <div class="manual-block"><div class="manual-block-title">💵 달러인덱스</div><div class="manual-block-body">달러 강약세 기준</div></div>
+        <div class="manual-block"><div class="manual-block-title">📊 장단기 금리차</div><div class="manual-block-body">0↓ 경기침체 선행 신호</div></div>
+      </div>
+      <div class="manual-section" id="manual-calc">
+        <div class="manual-section-title">트레이딩 계산기</div>
+        <div class="manual-block"><div class="manual-block-title">① 기본 설정</div><div class="manual-block-body">종목 · 방향 · 레버리지 입력</div></div>
+        <div class="manual-block"><div class="manual-block-title">② 수량 단위 선택</div><div class="manual-block-body">USDT · 수량 · KRW</div></div>
+        <div class="manual-block"><div class="manual-block-title">③ 진입 방식</div><div class="manual-block-body">방법 A  직접 분할매수 (1~3차)<br>방법 B  스케일드 오더 (구간 자동 분할)</div></div>
+        <div class="manual-block"><div class="manual-block-title">④ 평단 결과</div><div class="manual-block-body">자동 계산</div></div>
+        <div class="manual-block"><div class="manual-block-title">⑤ 손익비</div><div class="manual-block-body">SL + TP1~5 입력 후<br>수익 · 손익비 · 청산가 자동 계산</div></div>
+        <div class="manual-block"><div class="manual-block-title">⑥ 수수료 · 펀딩비</div><div class="manual-block-body">최종 수익 자동 반영</div></div>
+      </div>
+      <div class="manual-divider"></div>
+      <div class="manual-cta">
+        <div class="manual-cta-title">🎯 차티스트 인사이트 멤버십</div>
+        <div class="manual-cta-desc">자산운용기관 10년 경력<br>금융인이 직접 설계한<br><br>데이터 기반 매매 알림을<br>하나의 대시보드에서 확인하세요.<br><br>비트코인 진입가 · RSI 다이버전스 ·<br>전체 알림 무제한 열람</div>
+        <a class="manual-cta-btn" href="https://fanding.kr/@bzcLu6QCTdMe/membership/" target="_blank">팬딩 멤버십 가입하기 →</a>
+      </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-      <div style="font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:1.2px;text-transform:uppercase;">매매 기록</div>
-      <div style="font-size:12px;color:#666;" id="j-trade-count"></div>
-    </div>
-    <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">
-      <button class="j-filter active" onclick="jSetFilter('all',this)" style="font-size:12px;padding:5px 14px;border:1px solid #C9A84C;border-radius:20px;background:rgba(201,168,76,0.12);color:#C9A84C;cursor:pointer;">전체</button>
-      <button class="j-filter" onclick="jSetFilter('open',this)" style="font-size:12px;padding:5px 14px;border:1px solid #242424;border-radius:20px;background:transparent;color:#777;cursor:pointer;">오픈</button>
-      <button class="j-filter" onclick="jSetFilter('closed',this)" style="font-size:12px;padding:5px 14px;border:1px solid #242424;border-radius:20px;background:transparent;color:#777;cursor:pointer;">청산</button>
-      <button class="j-filter" onclick="jSetFilter('LONG',this)" style="font-size:12px;padding:5px 14px;border:1px solid #242424;border-radius:20px;background:transparent;color:#777;cursor:pointer;">LONG만</button>
-      <button class="j-filter" onclick="jSetFilter('SHORT',this)" style="font-size:12px;padding:5px 14px;border:1px solid #242424;border-radius:20px;background:transparent;color:#777;cursor:pointer;">SHORT만</button>
-    </div>
-    <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead><tr>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;white-space:nowrap;">종목</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">방향</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">진입가</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">청산가</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">투자금</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">손익</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">손익률</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;text-transform:uppercase;">상태</th>
-          <th style="font-size:10px;color:#777;text-align:left;padding:8px 12px;border-bottom:1px solid #242424;"></th>
-        </tr></thead>
-        <tbody id="j-tbody"><tr><td colspan="9" style="text-align:center;padding:60px 20px;color:#555;font-size:13px;">📋 매매 기록이 없습니다</td></tr></tbody>
-      </table>
+    <div class="manual-footer">
+      <label class="manual-no-show">
+        <input type="checkbox" id="manual-no-show-cb" onchange="setManualNoShow(this.checked)">
+        다시 보지 않기
+      </label>
+      <button class="manual-close" onclick="hideManual()" style="width:auto;border-radius:6px;padding:6px 12px;font-size:11px;">닫기</button>
     </div>
   </div>
 </div>
+
+<!-- ★ 수정①: BTC 페이월 - paywall-box에 stopPropagation 추가 -->
+<div id="btc-paywall-overlay" class="btc-overlay">
+  <div class="paywall-box" style="width:300px;" onclick="event.stopPropagation()">
+    <button class="paywall-close" onclick="hideBtcPaywall()">✕</button>
+    <div class="paywall-icon">🔒</div>
+    <div class="paywall-title">멤버십 전용 데이터</div>
+    <div class="paywall-desc">팬딩 멤버십 가입 후<br>비트코인 신호를<br>열람할 수 있습니다.</div>
+    <input class="paywall-input" id="btc-pw-input" type="password" placeholder="••••" maxlength="10" onkeydown="if(event.key==='Enter')checkBtcPassword()">
+    <button class="paywall-btn" onclick="checkBtcPassword()">비밀번호 입력</button>
+    <div class="paywall-error" id="btc-pw-error">비밀번호가 틀렸습니다.</div>
+    <div class="paywall-sub">
+      <!-- ★ 수정①: 팬딩 링크 stopPropagation -->
+      <a href="https://fanding.kr/@bzcLu6QCTdMe/membership/" target="_blank" onclick="event.stopPropagation()">팬딩 멤버십 구독하기 →</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ BTC 신호 팝업 (슬라이드인) ══ -->
+<div class="btc-popup" id="btc-slide-popup">
+  <div class="btc-popup-header">
+    <div class="btc-popup-title">🔔 비트코인 신호</div>
+    <button class="btc-popup-close" onclick="closeBtcPopup()">✕</button>
+  </div>
+  <div class="btc-popup-body" id="btc-popup-body">
+    <div class="btc-popup-dir long" id="btc-popup-dir">🔴 LONG</div>
+    <div class="btc-popup-entry" id="btc-popup-entry">—</div>
+    <div class="btc-popup-tf" id="btc-popup-tf">10M</div>
+  </div>
+</div>
+
+<!-- ══ 소리 설정 팝업 ══ -->
+<div class="sound-overlay" id="sound-overlay" onclick="hideSoundPopup(event)">
+  <div class="sound-box" onclick="event.stopPropagation()">
+    <div class="sound-box-title">
+      🔔 알림음 설정
+      <button class="paywall-close" onclick="hideSoundPopup(null)">✕</button>
+    </div>
+    <div class="sound-toggle-row">
+      <div class="sound-toggle-label">알림음 ON/OFF</div>
+      <label class="sound-switch">
+        <input type="checkbox" id="sound-switch-cb" onchange="onSoundToggle(this.checked)">
+        <span class="sound-slider"></span>
+      </label>
+    </div>
+    <div class="sound-vol-row">
+      <div class="sound-vol-label"><span>볼륨</span><span id="sound-vol-display">50%</span></div>
+      <input class="sound-vol-slider" type="range" min="0" max="100" value="50" id="sound-vol-range" oninput="onVolumeChange(this.value)">
+    </div>
+    <div class="sound-type-row">
+      <div class="sound-type-label">알림음 종류</div>
+      <div class="sound-type-btns">
+        <button class="sound-type-btn active" id="stype-chime" onclick="setSoundType('chime',this)">차임</button>
+        <button class="sound-type-btn" id="stype-piano" onclick="setSoundType('piano',this)">피아노</button>
+        <button class="sound-type-btn" id="stype-elec" onclick="setSoundType('elec',this)">전자음</button>
+      </div>
+      <div class="sound-preview-row">
+        <button class="sound-preview-btn" onclick="previewSound('chime')">▶ 차임</button>
+        <button class="sound-preview-btn" onclick="previewSound('piano')">▶ 피아노</button>
+        <button class="sound-preview-btn" onclick="previewSound('elec')">▶ 전자음</button>
+      </div>
+    </div>
+    <button class="sound-close-btn" onclick="hideSoundPopup(null)">확인</button>
+  </div>
+</div>
+
+
+<!-- ══ 스크롤 탑 버튼 ══ -->
+<button id="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<footer class="site-footer">
+  <div class="sf-links">
+    <a class="sth-btn sth-btn-youtube" href="https://www.youtube.com/@CHARTISTLAB" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>유튜브
+    </a>
+    <a class="sth-btn sth-btn-telegram" href="https://t.me/chartistlab" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.9 8.2l-2 9.4c-.1.6-.5.8-1 .5l-2.8-2.1-1.3 1.3c-.2.2-.3.3-.6.3l.2-2.9 5.1-4.6c.2-.2 0-.3-.3-.1L6.1 14.7 3.4 14c-.6-.2-.6-.6.1-.8l11.6-4.5c.5-.2 1 .1.8.8z"/></svg>텔레그램
+    </a>
+    <a class="sth-btn sth-btn-fanding" href="https://fanding.kr/@bzcLu6QCTdMe/membership/" target="_blank">
+      <img src="https://fanding.kr/favicon.ico" width="16" height="16" style="border-radius:3px;opacity:0.85;">구독하기
+    </a>
+  </div>
+  <p class="sf-note">본 데이터는 알고리즘이 자동 스캐닝한 기술적 분석 결과이며, 특정 종목의 매수·매도 권유가 아닙니다.<br>투자 판단 및 손익에 대한 모든 책임은 이용자 본인에게 있으며, 과거 결과가 미래 수익을 보장하지 않습니다.</p>
+  <p class="sf-source">데이터 출처: Yahoo Finance · CNN Fear &amp; Greed · 업비트 · 빗썸 · 바이낸스 · ForexFactory</p>
+</footer>
 
 <script>
 var BASE_URL='https://chartist-insight.com/data/';
@@ -1852,7 +1956,7 @@ sigMap['rsi_bear']        = {label:'하락 다이버전스', cls:'sig-rsi-bear-b
 sigMap['rsi_hidden_bear'] = {label:'숨은 하락 다이버전스', cls:'sig-rsi-bear-badge'};
 
 // ══════════════════════════════════════════════
-
+// switchTab 확장 - 매매일지 탭
 // ══════════════════════════════════════════════
 var _origSwitchTab=switchTab;
 switchTab=function(tab,btn){
@@ -1871,6 +1975,21 @@ var journalTrades=[];
 var journalFilter='all';
 var journalDir='long';
 var journalFormOpen=false;
+
+function initJournal(){
+  var saved=localStorage.getItem('journal_user');
+  var savedPw=localStorage.getItem('journal_pw');
+  if(saved&&savedPw){
+    journalUser=saved;journalPw=savedPw;
+    loadJournalTrades();
+    showJournalMain();
+  }else{
+    var auth=document.getElementById('j-auth-screen');
+    var main=document.getElementById('journal-main');
+    if(auth){auth.style.display='block';}
+    if(main){main.style.display='none';main.classList.remove('show');}
+  }
+}
 
 function showJournalLogin(){
   var lbox=document.getElementById('j-auth-screen').querySelector('div:first-child');
@@ -2192,252 +2311,6 @@ initBtcBlur();
   },{passive:true});
 })();
 
-if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js")}
-// ════════════════════════════════════
-// 매매일지 v4
-// ════════════════════════════════════
-(function(){
-var __origST = window.switchTab;
-window.switchTab = function(tab, btn) {
-  if(__origST) __origST(tab, btn);
-  if(tab==='btc'){try{initBtcBlur();}catch(e){}}
-  if(tab==='journal'){
-    var auth=document.getElementById('j-auth-screen');
-    var main=document.getElementById('j-main-screen');
-    if(!auth||!main)return;
-    var tok=localStorage.getItem('j_token');
-    var usr=localStorage.getItem('j_user');
-    if(tok&&usr){
-      auth.style.display='none';
-      main.style.display='';
-      var ul=document.getElementById('j-user-label');
-      if(ul)ul.textContent=usr+' 님의 매매일지';
-      jLoadTrades();
-    }else{
-      auth.style.display='block';
-      main.style.display='none';
-    }
-  }
-};
-})();
-
-function jSwitchAuthTab(tab){
-  var l=document.getElementById('j-login-section');
-  var r=document.getElementById('j-register-section');
-  var lb=document.getElementById('j-tab-login-btn');
-  var rb=document.getElementById('j-tab-reg-btn');
-  if(tab==='login'){
-    if(l)l.style.display='';if(r)r.style.display='none';
-    if(lb){lb.style.borderBottom='2px solid #C9A84C';lb.style.color='#C9A84C';}
-    if(rb){rb.style.borderBottom='2px solid transparent';rb.style.color='#777';}
-  }else{
-    if(l)l.style.display='none';if(r)r.style.display='';
-    if(rb){rb.style.borderBottom='2px solid #C9A84C';rb.style.color='#C9A84C';}
-    if(lb){lb.style.borderBottom='2px solid transparent';lb.style.color='#777';}
-  }
-}
-
-async function journalLogin(){
-  var un=(document.getElementById('j-username').value||'').trim();
-  var pw=document.getElementById('j-password').value||'';
-  var e=document.getElementById('j-login-err');e.style.display='none';
-  if(!un||!pw){e.textContent='아이디와 비밀번호를 입력해주세요';e.style.display='block';return;}
-  try{
-    var res=await fetch('https://chartist-insight.com/trade/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:un,password:pw})});
-    var d=await res.json();
-    if(!res.ok||d.error){e.textContent=d.error||'로그인 실패';e.style.display='block';return;}
-    localStorage.setItem('j_token',d.token||'ok');
-    localStorage.setItem('j_user',un);
-    document.getElementById('j-auth-screen').style.display='none';
-    document.getElementById('j-main-screen').style.display='';
-    var ul=document.getElementById('j-user-label');if(ul)ul.textContent=un+' 님의 매매일지';
-    var dt=document.getElementById('j-date');if(dt&&!dt.value)dt.value=new Date().toISOString().split('T')[0];
-    jLoadTrades();
-  }catch(err){e.textContent='서버 연결 오류. 잠시 후 다시 시도해주세요.';e.style.display='block';}
-}
-
-async function journalRegister(){
-  var un=(document.getElementById('j-reg-username').value||'').trim();
-  var fi=(document.getElementById('j-reg-fanding').value||'').trim();
-  var pw=document.getElementById('j-reg-pw').value||'';
-  var pw2=document.getElementById('j-reg-pw2').value||'';
-  var e=document.getElementById('j-reg-err');e.style.display='none';
-  if(!un||!pw||!fi){e.textContent='모든 필드를 입력해주세요';e.style.display='block';return;}
-  if(un.length<4){e.textContent='아이디는 4자 이상';e.style.display='block';return;}
-  if(pw.length<8){e.textContent='비밀번호는 8자 이상';e.style.display='block';return;}
-  if(pw!==pw2){e.textContent='비밀번호가 일치하지 않습니다';e.style.display='block';return;}
-  try{
-    var res=await fetch('https://chartist-insight.com/trade/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:un,password:pw,fanding_id:fi})});
-    var d=await res.json();
-    if(!res.ok||d.error){e.textContent=d.error||'회원가입 실패';e.style.display='block';return;}
-    alert('회원가입 완료! 로그인해주세요.');
-    jSwitchAuthTab('login');
-    document.getElementById('j-username').value=un;
-  }catch(err){e.textContent='서버 연결 오류.';e.style.display='block';}
-}
-
-function journalLogout(){
-  localStorage.removeItem('j_token');localStorage.removeItem('j_user');
-  document.getElementById('j-auth-screen').style.display='block';
-  document.getElementById('j-main-screen').style.display='none';
-}
-
-var jAllTrades=[];var jFilter='all';
-
-async function jLoadTrades(){
-  var tok=localStorage.getItem('j_token');if(!tok)return;
-  try{
-    var res=await fetch('https://chartist-insight.com/trade/list',{headers:{'Authorization':'Bearer '+tok}});
-    if(res.status===401){journalLogout();return;}
-    var d=await res.json();
-    jAllTrades=Array.isArray(d.trades)?d.trades:[];
-    jRenderStats();jRenderList();
-    var dt=document.getElementById('j-date');if(dt&&!dt.value)dt.value=new Date().toISOString().split('T')[0];
-  }catch(err){jAllTrades=[];jRenderStats();jRenderList();}
-}
-
-function jRenderStats(){
-  try{
-    var closed=(jAllTrades||[]).filter(function(t){return t&&t.status==='closed';});
-    var wins=closed.filter(function(t){return(parseFloat(t.pnl)||0)>0;});
-    var totalPnl=closed.reduce(function(s,t){return s+(parseFloat(t.pnl)||0);},0);
-    var wr=closed.length>0?Math.round(wins.length/closed.length*100):0;
-    var rrS=0,rrC=0;
-    closed.forEach(function(t){var en=parseFloat(t.entry_price)||0,ex=parseFloat(t.exit_price)||0,sl=parseFloat(t.stop_loss)||0;if(en&&ex&&sl&&Math.abs(en-sl)>0){rrS+=Math.abs(ex-en)/Math.abs(en-sl);rrC++;}});
-    var openCnt=(jAllTrades||[]).filter(function(t){return t&&t.status==='open';}).length;
-    var ts=document.getElementById('j-s-total');if(ts)ts.textContent=jAllTrades.length+'건 (오픈 '+openCnt+')';
-    var we=document.getElementById('j-s-wr');if(we){we.textContent=wr+'%';we.style.color=wr>=50?'#26a642':'#e2534a';}
-    var wb=document.getElementById('j-s-wr-bar');if(wb)wb.style.background=wr>=50?'#26a642':'#e2534a';
-    var pe=document.getElementById('j-s-pnl');if(pe){pe.textContent=(totalPnl>0?'+':'')+totalPnl.toFixed(1)+'$';pe.style.color=totalPnl>0?'#26a642':totalPnl<0?'#e2534a':'#e2e2e2';}
-    var pb=document.getElementById('j-s-pnl-bar');if(pb)pb.style.background=totalPnl>0?'#26a642':totalPnl<0?'#e2534a':'#C9A84C';
-    var rr=document.getElementById('j-s-rr');if(rr)rr.textContent=rrC>0?(rrS/rrC).toFixed(1)+'R':'—';
-  }catch(err){}
-}
-
-function jRenderList(){
-  try{
-    var tbody=document.getElementById('j-tbody');if(!tbody)return;
-    var trades=(jAllTrades||[]).filter(function(t){return!!t;});
-    if(jFilter==='open')trades=trades.filter(function(t){return t.status==='open';});
-    else if(jFilter==='closed')trades=trades.filter(function(t){return t.status==='closed';});
-    else if(jFilter==='LONG')trades=trades.filter(function(t){return t.direction==='LONG';});
-    else if(jFilter==='SHORT')trades=trades.filter(function(t){return t.direction==='SHORT';});
-    trades.sort(function(a,b){return(b.entry_date||'').localeCompare(a.entry_date||'');});
-    var tc=document.getElementById('j-trade-count');if(tc)tc.textContent=trades.length+'건';
-    if(!trades.length){tbody.innerHTML='<tr><td colspan="9" style="text-align:center;padding:60px 20px;color:#555;font-size:13px;">📋 매매 기록이 없습니다</td></tr>';return;}
-    tbody.innerHTML=trades.map(function(t){
-      var pnl=parseFloat(t.pnl)||0;
-      var pc=pnl>0?'color:#26a642;font-weight:700;':pnl<0?'color:#e2534a;font-weight:700;':'color:#555;';
-      var ps=pnl!==0?(pnl>0?'+':'')+pnl.toFixed(1)+'$':'—';
-      var sz=parseFloat(t.size)||0;var lv=parseFloat(String(t.leverage||'1').replace(/x/i,''))||1;
-      var pp=sz>0&&pnl!==0?(pnl>0?'+':'')+(pnl/sz*100/lv).toFixed(1)+'%':'—';
-      var tk=(t.ticker||t.symbol||'').toUpperCase();
-      var ls=t.leverage?String(t.leverage).toLowerCase().includes('x')?t.leverage:t.leverage+'x':'';
-      var db=t.direction==='LONG'?'background:rgba(38,166,66,0.12);color:#26a642;':'background:rgba(226,83,74,0.12);color:#e2534a;';
-      var sb=t.status==='open'?'background:rgba(201,168,76,0.1);color:#C9A84C;border:1px solid rgba(201,168,76,0.28);':'background:#1e1e1e;color:#555;';
-      var tid=(t.id||t._id||'');
-      return '<tr style="border-bottom:1px solid #1a1a1a;">'+
-        '<td style="padding:12px;"><div style="font-weight:700;font-size:14px;color:#e2e2e2;">'+tk+'</div><div style="font-size:11px;color:#555;margin-top:2px;">'+(t.entry_date||'')+' '+(ls?'· '+ls:'')+'</div></td>'+
-        '<td style="padding:12px;"><span style="display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;'+db+'">'+(t.direction||'')+'</span></td>'+
-        '<td style="padding:12px;color:#e2e2e2;">'+(t.entry_price||'—')+'</td>'+
-        '<td style="padding:12px;color:#e2e2e2;">'+(t.exit_price||'<span style="color:#444">—</span>')+'</td>'+
-        '<td style="padding:12px;color:#e2e2e2;">$'+sz+'</td>'+
-        '<td style="padding:12px;'+pc+'">'+ps+'</td>'+
-        '<td style="padding:12px;'+pc+'font-size:12px;">'+pp+'</td>'+
-        '<td style="padding:12px;"><span style="display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;'+sb+'">'+(t.status==='open'?'오픈':'청산')+'</span></td>'+
-        '<td style="padding:12px;"><button onclick="jOpenEdit(\''+tid+'\')" style="background:none;border:1px solid #242424;border-radius:5px;color:#555;font-size:12px;padding:4px 8px;cursor:pointer;">✎</button></td>'+
-      '</tr>';
-    }).join('');
-  }catch(err){}
-}
-
-function jSetFilter(f,btn){
-  jFilter=f;
-  document.querySelectorAll('.j-filter').forEach(function(b){b.style.borderColor='#242424';b.style.color='#777';b.style.background='transparent';});
-  if(btn){btn.style.borderColor='#C9A84C';btn.style.color='#C9A84C';btn.style.background='rgba(201,168,76,0.12)';}
-  jRenderList();
-}
-
-function jResetForm(){
-  ['j-ticker','j-lev','j-entry','j-exit','j-size','j-sl','j-tp','j-memo'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
-  var d=document.getElementById('j-dir');if(d)d.value='LONG';
-  var dt=document.getElementById('j-date');if(dt)dt.value=new Date().toISOString().split('T')[0];
-  var e=document.getElementById('j-add-err');if(e)e.style.display='none';
-}
-
-async function journalAdd(){
-  var tok=localStorage.getItem('j_token');if(!tok)return;
-  var ticker=(document.getElementById('j-ticker').value||'').trim().toUpperCase();
-  var direction=document.getElementById('j-dir').value;
-  var leverage=(document.getElementById('j-lev').value||'').trim()||'1x';
-  var entry_date=document.getElementById('j-date').value;
-  var entry_price=parseFloat(String(document.getElementById('j-entry').value).replace(/,/g,''))||0;
-  var exit_price=parseFloat(String(document.getElementById('j-exit').value).replace(/,/g,''))||null;
-  var size=parseFloat(String(document.getElementById('j-size').value).replace(/,/g,''))||0;
-  var stop_loss=parseFloat(String(document.getElementById('j-sl').value).replace(/,/g,''))||null;
-  var take_profit=parseFloat(String(document.getElementById('j-tp').value).replace(/,/g,''))||null;
-  var memo=(document.getElementById('j-memo').value||'').trim();
-  var e=document.getElementById('j-add-err');e.style.display='none';
-  if(!ticker){e.textContent='종목을 입력해주세요';e.style.display='block';return;}
-  if(!entry_price){e.textContent='진입가를 입력해주세요';e.style.display='block';return;}
-  if(!size){e.textContent='투자금을 입력해주세요';e.style.display='block';return;}
-  if(!entry_date){e.textContent='진입일을 선택해주세요';e.style.display='block';return;}
-  try{
-    var res=await fetch('https://chartist-insight.com/trade/add',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+tok},body:JSON.stringify({ticker,direction,leverage,entry_date,entry_price,exit_price,size,stop_loss,take_profit,memo})});
-    if(res.status===401){journalLogout();return;}
-    var d=await res.json();
-    if(!res.ok||d.error){e.textContent=d.error||'저장 실패';e.style.display='block';return;}
-    jResetForm();await jLoadTrades();
-  }catch(err){e.textContent='서버 연결 오류';e.style.display='block';}
-}
-
-var jEditId=null;
-function jOpenEdit(id){
-  if(!id)return;
-  var t=jAllTrades.find(function(x){return x&&(x.id===id||x._id===id);});
-  if(!t)return;
-  jEditId=id;
-  var modal=document.getElementById('j-edit-modal');
-  if(!modal){
-    modal=document.createElement('div');modal.id='j-edit-modal';
-    modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:10000;display:flex;align-items:center;justify-content:center;';
-    modal.innerHTML='<div style="background:#1a1a1a;border:1px solid #242424;border-top:2px solid #C9A84C;border-radius:12px;padding:28px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><h3 style="font-size:15px;font-weight:700;color:#C9A84C;">✏️ 매매 수정</h3><button onclick="jCloseEdit()" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer;">✕</button></div><input type="hidden" id="j-e-id"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">종목</label><input id="j-e-ticker" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">방향</label><select id="j-e-dir" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"><option value="LONG">LONG</option><option value="SHORT">SHORT</option></select></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">배율</label><input id="j-e-lev" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">진입일</label><input id="j-e-date" type="date" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">진입가</label><input id="j-e-entry" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">청산가</label><input id="j-e-exit" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">투자금($)</label><input id="j-e-size" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">손절가</label><input id="j-e-sl" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div><div style="grid-column:1/-1;"><label style="display:block;font-size:11px;color:#777;margin-bottom:5px;">메모</label><input id="j-e-memo" type="text" style="width:100%;background:#111;border:1px solid #242424;border-radius:6px;color:#e2e2e2;font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;"></div></div><div id="j-e-err" style="background:rgba(226,83,74,0.12);border:1px solid rgba(226,83,74,0.3);border-radius:6px;color:#e2534a;font-size:12px;padding:8px 12px;margin-top:10px;display:none;"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px;"><button onclick="jCloseEdit()" style="background:transparent;color:#777;border:1px solid #242424;border-radius:6px;padding:9px 16px;font-size:13px;cursor:pointer;">취소</button><button onclick="journalUpdate()" style="background:#C9A84C;color:#000;border:none;border-radius:6px;padding:9px 24px;font-size:13px;font-weight:700;cursor:pointer;">저장</button></div></div>';
-    document.body.appendChild(modal);
-    modal.addEventListener('click',function(e){if(e.target===modal)jCloseEdit();});
-  }
-  modal.style.display='flex';
-  document.getElementById('j-e-id').value=id;
-  document.getElementById('j-e-ticker').value=(t.ticker||t.symbol||'').toUpperCase();
-  document.getElementById('j-e-dir').value=t.direction||'LONG';
-  document.getElementById('j-e-lev').value=t.leverage||'';
-  document.getElementById('j-e-date').value=t.entry_date||'';
-  document.getElementById('j-e-entry').value=t.entry_price||'';
-  document.getElementById('j-e-exit').value=t.exit_price||'';
-  document.getElementById('j-e-size').value=t.size||'';
-  document.getElementById('j-e-sl').value=t.stop_loss||'';
-  document.getElementById('j-e-memo').value=t.memo||'';
-  var ee=document.getElementById('j-e-err');if(ee)ee.style.display='none';
-}
-function jCloseEdit(){var m=document.getElementById('j-edit-modal');if(m)m.style.display='none';}
-
-async function journalUpdate(){
-  var tok=localStorage.getItem('j_token');if(!tok)return;
-  var id=document.getElementById('j-e-id').value;
-  var ep=parseFloat(String(document.getElementById('j-e-entry').value).replace(/,/g,''))||0;
-  var e=document.getElementById('j-e-err');e.style.display='none';
-  if(!ep){e.textContent='진입가를 입력해주세요';e.style.display='block';return;}
-  var payload={id,ticker:document.getElementById('j-e-ticker').value.trim().toUpperCase(),direction:document.getElementById('j-e-dir').value,leverage:document.getElementById('j-e-lev').value.trim(),entry_date:document.getElementById('j-e-date').value,entry_price:ep,exit_price:parseFloat(String(document.getElementById('j-e-exit').value).replace(/,/g,''))||null,size:parseFloat(String(document.getElementById('j-e-size').value).replace(/,/g,''))||null,stop_loss:parseFloat(String(document.getElementById('j-e-sl').value).replace(/,/g,''))||null,memo:document.getElementById('j-e-memo').value.trim()};
-  try{
-    var res=await fetch('https://chartist-insight.com/trade/update',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+tok},body:JSON.stringify(payload)});
-    if(res.status===401){journalLogout();return;}
-    var d=await res.json();
-    if(!res.ok||d.error){e.textContent=d.error||'수정 실패';e.style.display='block';return;}
-    jCloseEdit();await jLoadTrades();
-  }catch(err){e.textContent='서버 연결 오류';e.style.display='block';}
-}
-
-function updateStatBadges(){try{jRenderStats();}catch(e){}}
-// ════════════════ END 매매일지 v4 ════════════════
-</script>
+if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js")}</script>
 </body>
 </html>
